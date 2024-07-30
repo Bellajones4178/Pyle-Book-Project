@@ -1,0 +1,86 @@
+### CREATE five documents.
+POST http://localhost:3000/books HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "publisher": "",
+    "maingenre": "",
+    "language": "",
+    "datestarted": "",
+    "dateended": ""
+}
+
+
+### CREATE 2
+POST http://localhost:3000/planes HTTP/1.1
+content-type: application/json
+
+{
+    "type": "F-16 Fighting Falcon",
+    "speed": 1345,
+    "firstFlight": "01-20-1974"
+}
+
+### CREATE 3
+POST http://localhost:3000/planes HTTP/1.1
+content-type: application/json
+
+{
+    "type": "B-1B Lancer",
+    "speed": 950,
+    "firstFlight": "12-23-1974"
+}
+
+### CREATE 4
+POST http://localhost:3000/planes HTTP/1.1
+content-type: application/json
+
+{
+    "type": "U-2S/TU-2S Dragon Lady",
+    "speed": 410,
+    "firstFlight": "10-1-1994"
+}
+
+### CREATE 5
+POST http://localhost:3000/planes HTTP/1.1
+content-type: application/json
+
+{
+    "type": "EC-130H Compass Call",
+    "speed": 300,
+    "firstFlight": "01-01-1981"
+}
+
+
+### RETRIEVE all documents.
+GET http://localhost:3000/books HTTP/1.1
+
+
+
+### RETRIEVE a document by its ID.
+### Replace the following ID with one that exists in the collection.
+GET http://localhost:3000/planes/665372b0836f34b0772e3056 HTTP/1.1
+
+
+### UPDATE one document's speed, by ID.
+### Replace the ID in the following request with one that exists
+### and update the year:
+PUT http://localhost:3000/planes/665372b0836f34b0772e3056 HTTP/1.1
+content-type: application/json
+
+{
+    "type": "U-2S/TU-2S Dragon Lady",
+    "speed": 480,
+    "firstFlight": "10-1-1994"
+}
+
+### DELETE by ID (responds with nothing if successful):
+DELETE http://localhost:3000/planes/665372b0836f34b0772e3056 HTTP/1.1
+
+
+
+### RETRIEVE all documents (responds with 4 or the original 5):
+GET http://localhost:3000/planes HTTP/1.1
+
